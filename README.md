@@ -1,6 +1,6 @@
 # Kafka Producer
 
-로컬(windows) pc의 파일들을 원격 kafka cluster에 전송하는 프로듀서
+로컬(windows or linux) pc의 파일들을 원격 kafka cluster에 전송하는 프로듀서
 
 ### 사전 준비 ###
 1. java 1.8
