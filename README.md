@@ -1,6 +1,13 @@
 # Kafka Producer
-
 로컬(windows or linux) pc의 파일들을 원격 kafka cluster에 전송하는 프로듀서
+
+# 개요
+특정 경로에 실시간으로 생성되는 이미지 파일들을 원격 Kafka Cluster에 전송하는 Producer입니다.
+java로 이루어져있으며, watchSerivce 라이브러리를 활용하여 1초 간격(조정가능)으로 특정 경로의 파일들을 감지합니다.
+최초 실행 시, 경로에 쌓여져있는 파일들을 우선적으로 일괄 전송 후 실시간으로 생성되는 파일들에 대해 감지하여
+지속해서 topic에 전송합니다. kafka cluster가 ssl환경 일 시, keystore.jks, truststore.jks 파일들이 필요합니다.
+kafka 브로커, 감지할 특정 경로 등의 설정 값들을 사용자에 따라 정의할 수 있습니다.
+이미지 파일은 인코딩되어 topic에 전송되며, kafka 메시지 구조는 ImgProducer.java 파일에서 수정할 수 있습니다.
 
 ### 사전 준비 ###
 1. java 1.8
